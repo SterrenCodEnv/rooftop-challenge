@@ -72,6 +72,7 @@ export const updateCoupon = async (req: Request, res: Response) => {
     getRepository(Coupon).merge(coupon, updateCoupon);
     await getRepository(Coupon).save(coupon).then((data) => {
       res.status(201).json({
+        message: 'Success! Coupon update, emails assigned',
         data: data,
       });
     })
@@ -80,5 +81,37 @@ export const updateCoupon = async (req: Request, res: Response) => {
         message: err,
       });
     });
+  }else{
+      res.status(404).json({
+        message: 'Coupon is not exist',
+      });
   }
+};
+
+export const deleteCoupon = async (req: Request, res: Response) => {
+  const id = req.params.id;
+  const coupon = await getRepository(Coupon).findOne(id);
+    if(coupon){
+      if(!coupon.customerEmail){
+        await getRepository(Coupon).delete(id).then((data) => {
+          res.status(201).json({
+            message: 'Success! Coupon delete',
+            data: data,
+          });
+        })
+        .catch((err) => {
+          res.status(422).json({
+            message: err,
+          });
+        });
+      }else{
+        res.status(404).json({
+          message: 'Coupon not delete, assigned email',
+        });
+      }
+    }else{
+      res.status(404).json({
+        message: 'Coupon is not exist',
+      });
+    }
 };

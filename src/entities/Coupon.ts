@@ -1,19 +1,19 @@
 import {Entity, Column, PrimaryGeneratedColumn} from "typeorm";
 
-@Entity({name: "coupons", schema: "rooftop-backend-challenge"})
+@Entity({name: "coupons", schema: "rooftop-backend-challenge", synchronize: false})
 export class Coupon{
-    @PrimaryGeneratedColumn()
+    @PrimaryGeneratedColumn({type: "bigint", name: "id"})
     id!: Number;
 
-    @Column({name: "code"})
+    @Column( "character", {name: "code", length: 8, nullable: true})
     code!: String;
     
-    @Column({name: "customer_email"})
+    @Column("character varying", {name: "customer_email", nullable: true})
     customerEmail!: String;
 
-    @Column({name: "assigned_at"})
+    @Column("timestamp without time zone", {name: "assigned_at", nullable: true})
     assignedAt!: Date;
 
-    @Column({name: "expires_at"})
+    @Column("timestamp without time zone", {name: "expires_at", nullable: false})
     expiresAt!: Date;
 }
