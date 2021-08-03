@@ -29,6 +29,6 @@ router.patch('/coupon/:id', [
     body('email', 'Email is required').not().isEmpty(),
     body('email', 'Email is not valid').isEmail(),
     fieldsValidators
-], updateCoupon);
+], updateCoupon );
 
 export default router;

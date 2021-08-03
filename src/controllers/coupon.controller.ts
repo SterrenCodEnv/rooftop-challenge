@@ -1,6 +1,6 @@
-import { Request, Response } from "express";
-import { getRepository } from "typeorm";
-import { Coupon } from "../entities/Coupon";
+import { Request, Response } from 'express';
+import { getRepository } from 'typeorm';
+import { Coupon } from '../entities/Coupon';
 
 export const getCoupons = async (req: Request, res: Response) => {
   await getRepository(Coupon)
