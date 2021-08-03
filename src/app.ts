@@ -6,7 +6,7 @@ require('dotenv').config();
 //Import Routes
 import couponRoutes from "./routes/coupon.routes";
 //import statRoutes from "./routes/stat.routes";
-//import storeRoutes from "./routes/store.routes";
+import storeRoutes from "./routes/store.routes";
 
 const app: Application = express();
 createConnection();
@@ -17,5 +17,6 @@ app.use(bodyParser.json())
 
 // Routes
 app.use(couponRoutes);
+app.use(storeRoutes);
 
 app.listen(process.env.PORT, () => console.log(`Server listen in port ${process.env.PORT}`));

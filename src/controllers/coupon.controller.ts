@@ -67,7 +67,7 @@ export const updateCoupon = async (req: Request, res: Response) => {
   const coupon = await getRepository(Coupon).findOne(id);
   if(coupon){
     let updateCoupon: Coupon = coupon;
-    updateCoupon.customerEmail = email;
+    updateCoupon.customerEmail = email.toLowerCase();
     updateCoupon.assignedAt = new Date();
     getRepository(Coupon).merge(coupon, updateCoupon);
     await getRepository(Coupon).save(coupon).then((data) => {

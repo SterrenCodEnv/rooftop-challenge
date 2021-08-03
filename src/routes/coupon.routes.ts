@@ -6,7 +6,7 @@ const router = Router();
 // Import Controllers
 import { getCoupons, getCouponByEmail, createCoupon, updateCoupon, deleteCoupon } from '../controllers/coupon.controller'; 
 
-router.get('/coupons/all', getCoupons);
+router.get('/coupons/list', getCoupons);
 
 router.get('/coupons/email', [
     check('email', 'Email is required').not().isEmpty(),
