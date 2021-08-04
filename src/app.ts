@@ -1,12 +1,12 @@
-import express, {Application} from "express";
+import express, {Application} from 'express';
 import bodyParser from 'body-parser';
-import "reflect-metadata";
-import {createConnection} from "typeorm";
+import 'reflect-metadata';
+import {createConnection} from 'typeorm';
 require('dotenv').config();
 //Import Routes
-import couponRoutes from "./routes/coupon.routes";
-//import statRoutes from "./routes/stat.routes";
-import storeRoutes from "./routes/store.routes";
+import couponRoutes from './routes/coupon.routes';
+import statRoutes from './routes/stat.routes';
+import storeRoutes from './routes/store.routes';
 
 const app: Application = express();
 createConnection();
@@ -18,5 +18,6 @@ app.use(bodyParser.json())
 // Routes
 app.use(couponRoutes);
 app.use(storeRoutes);
+app.use(statRoutes);
 
 app.listen(process.env.PORT, () => console.log(`Server listen in port ${process.env.PORT}`));

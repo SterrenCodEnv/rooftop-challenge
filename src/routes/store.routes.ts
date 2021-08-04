@@ -4,7 +4,7 @@ import { fieldsValidators } from '../middlewares/fields-validator';
 const router = Router();
 
 // Import Controllers
-import { getAllStores, getStores, createStore, deleteStore } from '../controllers/store.controller'; 
+import { getAllStores, getStores, createStore } from '../controllers/store.controller'; 
 
 router.get('/stores/all', getAllStores);
 
