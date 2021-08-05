@@ -1,0 +1,361 @@
+{
+	"info": {
+		"_postman_id": "a26f0259-706a-4def-8d3b-3e7a6abb581f",
+		"name": "Rooftop Backend Challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Coupons",
+			"item": [
+				{
+					"name": "Get coupon by email",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "email",
+								"value": "te@wobi.np",
+								"type": "text"
+							},
+							{
+								"key": "code",
+								"value": "OQTHMFQP",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/coupons/email?email=te@wobi.np&code=OQTHMFQP",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"coupons",
+								"email"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "te@wobi.np"
+								},
+								{
+									"key": "code",
+									"value": "OQTHMFQP"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all coupons",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/coupons/list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"coupons",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create coupon",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "code",
+									"value": "R3TRY32A",
+									"type": "text"
+								},
+								{
+									"key": "expires_at",
+									"value": "2023-11-23 21:12:43",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/coupons/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"coupons",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete coupon",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "sterren@email.com",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/coupons/delete/111",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"coupons",
+								"delete",
+								"111"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update coupon",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "josep@emaiL.co",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/coupons/assign/113",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"coupons",
+								"assign",
+								"113"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stores",
+			"item": [
+				{
+					"name": "Get all stores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/stores/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"stores",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get stores - Pagination",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "email",
+								"value": "te@wobi.np",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "code",
+								"value": "OQTHMFQP",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/stores/list?page=2&name=Serv",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"stores",
+								"list"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								},
+								{
+									"key": "name",
+									"value": "Serv"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Estampados Textiles",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Lehman 735",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/stores/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"stores",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stats",
+			"item": [
+				{
+					"name": "Cupones existentes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/stats/existing-coupons",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"stats",
+								"existing-coupons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cupones asignados",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/stats/assigned-coupons",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"stats",
+								"assigned-coupons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cupones no asignados",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/stats/unassigned-coupons",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"stats",
+								"unassigned-coupons"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cupones asignados por dia",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/stats/assigneds-per-day",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"stats",
+								"assigneds-per-day"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
